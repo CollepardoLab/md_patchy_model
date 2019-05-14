@@ -79,7 +79,8 @@ We will prepare a box containing a given number of patchy particles (hard sphere
    * **potencial_PHS_lammps.f**: produces **table_PHS.xvg** which describes interactions between hard spheres (1 and 1), and polymer particles (3 and 3)
    * **patch_patch.f**: produces **table_XKT.xvg** which describes interactions between patches (2 and 2) at a given temparature. 
    
- **STEP 5: simulate/** \ 
+ **STEP 5: simulate/** 
+ 
  *INPUT FILES*
    * **conf3.xyz**
    * potentials in tabular form: **table_gas_ideal.xvg**, **table_LJ.xvg**, **table_PHS.xvg**, **table_10_5KT.xvg**
