@@ -1,0 +1,51 @@
+units          real   # units of energy kcal/mol, distance angstrom and time if femtosecond
+atom_style     full   # do not change
+boundary       p p p  # periodic boundary conditions in x y z 
+
+#bond_style      harmonic
+#angle_style     harmonic
+pair_style     table linear 1020 
+
+read_data      conf1.xyz  # contains the positions and masses and other information
+#read_restart    restart.end # would restart the simulation from the restart file of a previous one
+group hp1 type 1 2  
+#molecule 1 hp1 
+replicate 42 12 12
+
+newton         on               # do not change
+
+pair_coeff     1  1  table_PHS.xvg phs 4.0 
+pair_coeff     2  2  table_12kT.xvg poci 4.0       
+pair_coeff     1  2  table_gas_ideal.xvg gas 4.0      
+
+
+neighbor       2.0 bin          # neighbor list skin width
+neigh_modify   every 2 delay 4 check yes # frequency to update neighor list
+
+#bond_coeff      1 0.0 1.75
+#bond_coeff      2 0.0 3.0311
+#angle_coeff     1 0.0 120.0
+
+
+compute 1 all pair table
+
+timestep       0.1   # time step for the integration of the equations of motion, in femtoseconds 
+thermo_style   custom step temp pe etotal press vol enthalpy c_1 density   # energy and thermo properties printed to output
+thermo_modify  flush yes  # flush the buffer and write the output in real time
+thermo         1000     # how often (in steps) will write the properties of thermo_style to the output
+
+
+reset_timestep  0   # move the zero of time in the output to the value indicated there (if not needed, comment it)
+velocity        all create 1.71 89192 rot yes mom yes dist gaussian # assign initial velocities to the particles
+restart         100000  restart   # write a binary restart file every XXX steps  
+
+fix 		1 hp1 rigid/nvt molecule  temp 179.71 179.71 100.0 # iso 100.0 100.0 100.0
+#fix 		1 all nvt  temp 179.71 179.71 100.0 # iso 300.0 300.0 100.0
+#fix             2 hp1 shake  0.0001 20 0 b 1 a 1
+
+dump            1 all custom 5      replicas.lammpstrj id type  xu yu zu # dump configuration into a trajectory file
+run             5                         # runs this number of steps of simulation
+unfix           1        # undo the fix 1, need to do this if it will be followed by another run
+undump          1        # undo the dump of the trajectory
+
+write_restart   restart.end  # write a binary restart file at the end of the simulation
