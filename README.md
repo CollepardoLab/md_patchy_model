@@ -45,17 +45,17 @@ Procedure: MD simulation with patchy particles and polymer
 -----------------------------------------------------------
 We will prepare a box containing a given number of patchy particles (hard spheres with patches on them) and a polymer chain. Then we will simulate the system in the NVT ensemble. The following explains the contents of each directory in this tutorial and the steps taken to carry out the simulation. 
 
-**STEP 1: replicate/** \
-*INPUT FILES*\
-  * **conf1.xyz**: xyz coordinates for one patchy particle in the correct format for lammps (ie input configuration) \
-  * **in.replicate**: simulation parameters for replicating conf1.xyz. Gives a multiple of orginal patchy particle based on      parameters given to "replicate" keyword \
-  * **table_gas_ideal.xvg**: ideal gas potential for interactions between patches and hard spheres in tabular form \
-  * **table_PHS.xvg**: potential for hard sphere-hard sphere interactions in tabular form \
+**STEP 1: replicate/** 
+*INPUT FILES*
+  * **conf1.xyz**: xyz coordinates for one patchy particle in the correct format for lammps (ie input configuration) 
+  * **in.replicate**: simulation parameters for replicating conf1.xyz. Gives a multiple of orginal patchy particle based on      parameters given to "replicate" keyword 
+  * **table_gas_ideal.xvg**: ideal gas potential for interactions between patches and hard spheres in tabular form 
+  * **table_PHS.xvg**: potential for hard sphere-hard sphere interactions in tabular form 
   * **table_12KT.xvg**: potential for patchy-patchy interactions in tabular form 
 
-*RUN AND USEFUL OUTPUT*\
- * **run.sh**: example script for running lammps on the command line with the input files descried above \
+*RUN AND USEFUL OUTPUT*
+ * **run.sh**: example script for running lammps on the command line with the input files descried above 
  * **replicas.lammpstrj**: lammps trajectory file with given number of frames. Each frame will contain a box of many patchy particles (number of particles = x*y*z specified by replicate keyword)
 
-**STEP 2: removing_particles/** \
+**STEP 2: removing_particles/** 
 
