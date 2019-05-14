@@ -58,4 +58,8 @@ We will prepare a box containing a given number of patchy particles (hard sphere
  * **replicas.lammpstrj**: lammps trajectory file with given number of frames. Each frame will contain a box of many patchy particles (number of particles = x*y*z specified by replicate keyword)
 
 **STEP 2: removing_particles/** 
-
+  * **replicas.lammpstrj**: edited version of *replicas.lammpstrj* in which the last configuration is saved and all other configurations are discarded.
+  * **trj_config**: dumped coordinates from *replicas.lammpstrj*
+  * **trj_ordered**: atoms from *trj_config* sorted sequentially
+  * **halo_bola.f90**: selects a subset of particles between *rmin* and *rmax* in *trj_ordered*  and formats coordinates
+  * **boli_final.g96**: formatted coordinates for subset (approx. 25%) of patchy particles
