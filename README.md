@@ -5,12 +5,14 @@ Tutorial on using the MD Patch Model of JR Espinosa et al.
 --------------------------------------------
 Reference
 --------------------------------------------
+
 For full details on the model see: (INCLUDE CITATION)
 
 
 --------------------------------------------
 Software and Packages
 --------------------------------------------
+
 1. LAMMPS (Large-scale atomiic/molecular massively parallel 
    simulator) 
   1.1. Install LAMMPS with mpi - for more information
