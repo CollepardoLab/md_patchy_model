@@ -43,7 +43,7 @@ Software and Packages
 -----------------------------------------------------------
 Procedure: MD simulation with patchy particles and polymer
 -----------------------------------------------------------
-We will prepare a box containing a given number of patchy particles (hard spheres with patches on them) and a polymer chain. Then we will simulate the system in the NVT ensemble. The following explains the contents of each directory in this tutorial and the steps taken to carry out the simulation. 
+We will prepare a box containing a given number of patchy particles (hard spheres with patches on them) and a polymer chain. Then we will simulate the system in the NVT ensemble. The following describes the files in each directory, in the order of usage.
 
 **STEP 1: replicate/**\
 *INPUT FILES*
@@ -70,3 +70,13 @@ We will prepare a box containing a given number of patchy particles (hard sphere
   * **halo_chain.f90**: Compile and run to set up atom coordinates, bonds and angles for polymer
   * **chain.g96**: formatted coordinates for polymer based on variables set in **halo_chain.f90**. Y and Z coordinates are edited manually for now.
   * **conf3.xyz**: (cat conf2.xyz chain.g96 > conf3.xyz). Updated total atoms, bonds, angles. Updated atom types, bond types, angle types, added mass for polymer particles.
+  
+  **STEP 4: potentials/** 
+  *The final step before we can run our simulations is to create the potentials for our patchy-particles and polymer chain interactions.* \
+  * Compile each file below with double precision (e.g.: gfortran -fdefault-real-8 -o a.out ideal_gas.f)
+  * **ideal_gas.f**: produces **table_gas_ideal.xvg** which describes interactions between patches and hard spheres (atom types 1 and 2), and patches and polymer particles (2 and 3).
+  * **potencial_LJ**: produces **table_LJ.xvg** which describes interactions between hard spheres and polymer particles (atom types 1 and 3).
+   * **potencial_PHS_lammps.f**: produces **table_PHS.xvg** which describes interactions between hard spheres (1 and 1), and polymer particles (3 and 3)
+   * **patch_patch.f**: produces **table_XKT.xvg** which describes interactions between patches (2 and 2) at a given temparature. 
+
+  
