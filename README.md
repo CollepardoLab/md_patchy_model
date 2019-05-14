@@ -80,11 +80,12 @@ We will prepare a box containing a given number of patchy particles (hard sphere
    * **patch_patch.f**: produces **table_XKT.xvg** which describes interactions between patches (2 and 2) at a given temparature. 
    
  **STEP 5: simulate/** \ 
- *INPUT*
+ *INPUT FILES*
    * **conf3.xyz**
    * potentials in tabular form: **table_gas_ideal.xvg**, **table_LJ.xvg**, **table_PHS.xvg**, **table_10_5KT.xvg**
    * **in.minimal**: lammps input file containing simulation parameters. A very short simulation.
-*RUN and OUTPUT* \
+   
+*RUN and OUTPUT* 
    * **run.sh**: execute this script to obtain sample output.
    * **patchy_and_polymer.lammpstraj**: Lammps trajectory file.
    
