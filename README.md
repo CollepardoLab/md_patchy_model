@@ -38,6 +38,6 @@ Software and Packages
           > make yes-user-smd
           > make lib-smd args="-b"
           > make yes-molecule
-          > make mpi
+          > make mpi  
 
          
