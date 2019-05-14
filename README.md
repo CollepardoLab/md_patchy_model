@@ -41,9 +41,12 @@ Software and Packages
           > make mpi  
 
 -----------------------------------------------------------
-PROCEDURE: MD simulation with patchy particles and polymer
+Procedure: MD simulation with patchy particles and polymer
 -----------------------------------------------------------
 We will prepare a box containing a given number of patchy particles (hard spheres with patches on them) and a polymer chain. Then we will simulate the system in the NVT ensemble. The following explains the contents of each directory in this tutorial and the steps taken to carry out the simulation. 
 
-**STEP 1: replicate***
-1.1. replicate/conf1.xyz contains xyz coordinates for one patchy particle in the correct format for lammps (ie input configuration)
+**STEP 1: replicate**
+1.1. replicate/conf1.xyz : xyz coordinates for one patchy particle in the correct format for lammps (ie input configuration) 
+1.2 replicate/in.replicate : simulation parameters for replicating conf1.xyz. Gives a multiple of orginal patchy particle based on parameters given to "replicate" keyword
+
+
