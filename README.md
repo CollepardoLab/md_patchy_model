@@ -20,7 +20,7 @@ Software and Packages
        
   1.2. Example installation on HPC (Cambridge users)
         Download lammps source from github
-           > git clone --depth https://github.com/lammps/lammps.git
+           > git clone --depth https://github.com/lammps/lammps.git \
            > cd lammps
            > module purge 
            > module load rhel7/default-peta4
