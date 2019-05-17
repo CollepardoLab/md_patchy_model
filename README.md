@@ -70,7 +70,7 @@ We will prepare a box containing a given number of patchy particles (hard sphere
  **STEP 3: create_config/** 
   * **boli_final.g96**: same as in step 2
   * **conf2.xyz**: same format as **conf1.xyz** above. The number of atoms is updated to total in **boli_final.g96** . The box information is obtained from **replicas.lammpstrj**. The last section of the file contains the contents of **boli_final.g96**. We now have a box containing 1584 patchy particles (equivalent to 6336 atoms).
-  * **halo_chain.f90**: Compile and run to set up atom coordinates, bonds and angles for polymer \
+  * **halo_chain.f90**: Compile and run to set up atom coordinates, bonds and angles for polymer
    >gfortran -o halo_chain halo_chain.f90 \
    >./halo_chain
   * **chain.g96**: formatted coordinates for polymer based on variables set in **halo_chain.f90**. Y and Z coordinates are edited manually for now.
