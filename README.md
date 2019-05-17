@@ -79,7 +79,7 @@ We will prepare a box containing a given number of patchy particles (hard sphere
   **STEP 4: potentials/** \
   *The final step before we can run our simulations is to create the potentials for our patchy-particles and polymer chain interactions.* 
   * Compile each file below with double precision
-  >gfortran -fdefault-real-8 -o a.out ideal_gas.f
+  >gfortran -fdefault-real-8 -o a.out ideal_gas.f \
   >./a.out
   * **ideal_gas.f**: produces **table_gas_ideal.xvg** which describes interactions between patches and hard spheres (atom types 1 and 2), and patches and polymer particles (2 and 3).
   * **potencial_LJ.f**: produces **table_LJ.xvg** which describes interactions between hard spheres and polymer particles (atom types 1 and 3).
