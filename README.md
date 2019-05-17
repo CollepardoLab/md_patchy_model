@@ -62,7 +62,7 @@ We will prepare a box containing a given number of patchy particles (hard sphere
   * **trj_config**: dumped coordinates from **replicas.lammpstrj**
   * **trj_ordered**: atoms from **trj_config** sorted sequentially
   * **halo_bola.f90**: selects a subset of particles between *rmin* and *rmax* from **trj_ordered** and formats coordinates \
- Complile and run as follows: 
+ Compile and run as follows: 
    >gfortran -o halo_bola halo_bola.f90 \
    >./halo_bola 
   * **boli_final.g96**: formatted coordinates for subset (approx. 25%) of patchy particles obtained by compiling and running **halo_bola.f90** above.
@@ -70,7 +70,9 @@ We will prepare a box containing a given number of patchy particles (hard sphere
  **STEP 3: create_config/** 
   * **boli_final.g96**: same as in step 2
   * **conf2.xyz**: same format as **conf1.xyz** above. The number of atoms is updated to total in **boli_final.g96** . The box information is obtained from **replicas.lammpstrj**. The last section of the file contains the contents of **boli_final.g96**. We now have a box containing 1584 patchy particles (equivalent to 6336 atoms).
-  * **halo_chain.f90**: Compile and run to set up atom coordinates, bonds and angles for polymer
+  * **halo_chain.f90**: Compile and run to set up atom coordinates, bonds and angles for polymer \
+   >gfortran -o halo_chain halo_chain.f90 \
+   >./halo_chain
   * **chain.g96**: formatted coordinates for polymer based on variables set in **halo_chain.f90**. Y and Z coordinates are edited manually for now.
   * **conf3.xyz**: (cat conf2.xyz chain.g96 > conf3.xyz). Updated total atoms, bonds, angles. Updated atom types, bond types, angle types, added mass for polymer particles.
   
