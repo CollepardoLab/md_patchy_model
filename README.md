@@ -62,9 +62,9 @@ We will prepare a box containing a given number of patchy particles (hard sphere
   * **trj_config**: dumped coordinates from **replicas.lammpstrj**
   * **trj_ordered**: atoms from **trj_config** sorted sequentially
   * **halo_bola.f90**: selects a subset of particles between *rmin* and *rmax* from **trj_ordered** and formats coordinates \
- Complile and run as follows: \
-   > gfortran -o halo_bola halo_bola.f90 \
-   >  ./halo_bola \
+ Complile and run as follows: 
+   >gfortran -o halo_bola halo_bola.f90 \
+   >./halo_bola 
   * **boli_final.g96**: formatted coordinates for subset (approx. 25%) of patchy particles obtained by compiling and running **halo_bola.f90** above.
   
  **STEP 3: create_config/** 
