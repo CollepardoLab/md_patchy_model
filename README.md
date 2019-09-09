@@ -7,7 +7,7 @@ Reference
 --------------------------------------------
 
 For full details on the model see: (INCLUDE CITATION)
-
+https://aip.scitation.org/doi/10.1063/1.5098551?af=R&
 
 --------------------------------------------
 Software and Packages
