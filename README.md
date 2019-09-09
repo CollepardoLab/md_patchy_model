@@ -5,7 +5,7 @@ Tutorial on using the MD Patch Model of JR Espinosa et al.
 --------------------------------------------
 Reference
 --------------------------------------------
-For 
+ 
 If you use this code please cite the refeence below, which includes full details on the model:
 J. Chem. Phys. 150, 224510 (2019)
 https://aip.scitation.org/doi/10.1063/1.5098551?af=R&
