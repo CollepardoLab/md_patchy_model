@@ -32,10 +32,8 @@ Software and Packages
            > make mpi \
            You should obtain the executable: lmp_mpi 
            
-   1.3.  **Add lammps packages** (RIGID, KOKKOS, USER-SMD, MOLECULE) required for MD patchy simulations \
+   1.3.  **Add lammps packages** (RIGID, USER-SMD, MOLECULE) required for MD patchy simulations \
           > make yes-rigid \
-          > make yes-kokkos \
-          > make mpi KOKKOS_DEVICES=OpenMP \
           > make yes-user-smd \
           > make lib-smd args="-b" \
           > make yes-molecule \
