@@ -38,7 +38,7 @@ Software and Packages
           > make lib-smd args="-b" \
           > make yes-molecule \
           > make package-update \
-          > make mpi  \
+          > make mpi 
                  
      You should obtain the executable: lmp_mpi 
 
