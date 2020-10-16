@@ -25,7 +25,7 @@ Software and Packages
        
    1.2. **Example installation on HPC** (Cambridge users) \
         Download lammps source from github \
-           > git clone --depth https://github.com/lammps/lammps.git \
+           > git clone https://github.com/lammps/lammps.git \
            > cd lammps \
            > git checkout origin/stable \
            > module purge \
