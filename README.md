@@ -1,7 +1,7 @@
 # md_patchy_model
 
 Tutorial on using the MD Patch Model of JR Espinosa et al.
-
+(In case of problems please email: jaj52@cam.ac.uk)
 --------------------------------------------
 Reference
 --------------------------------------------
@@ -26,19 +26,20 @@ Software and Packages
         Download lammps source from github \
            > git clone --depth https://github.com/lammps/lammps.git \
            > cd lammps \
+           > git checkout origin/stable \
            > module purge \
            > module load rhel7/default-peta4 \
-           > cd lammps/src \
-           > make mpi \
-           You should obtain the executable: lmp_mpi 
-           
-   1.3.  **Add lammps packages** (RIGID, USER-SMD, MOLECULE) required for MD patchy simulations \
+           > cd src 
+  
+   1.3.  **Install lammps packages** (RIGID, USER-SMD, MOLECULE) required for MD patchy simulations \
           > make yes-rigid \
           > make yes-user-smd \
           > make lib-smd args="-b" \
           > make yes-molecule \
           > make package-update \
-          > make mpi  
+          > make mpi  \
+                 
+     You should obtain the executable: lmp_mpi 
 
 -----------------------------------------------------------
 Procedure: MD simulation with patchy particles and polymer
