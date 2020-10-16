@@ -1,7 +1,8 @@
 # md_patchy_model
 
 Tutorial on using the MD Patch Model of JR Espinosa et al.
-     (In case of problems please email: jaj52@cam.ac.uk)
+     
+     *In case of problems please email: jaj52@cam.ac.uk*
 --------------------------------------------
 Reference
 --------------------------------------------
